@@ -8,14 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var txtFirstName: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Test comment
-        // Do any additional setup after loading the view.
+
+        txtFirstName.delegate = self
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 
 }
 
